@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>the perfect sunday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ambient glow blobs, the "futuristic sunbeam" signature -->
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
+  <div class="glow glow-3" aria-hidden="true"></div>
+
+  <main class="app">
+
+    <header class="app-header">
+      <h1 class="title">the perfect sunday</h1>
+      <p class="subtitle"><em>a tiny reset button for your day — tell it how you're doing and it'll take it from there</em></p>
+    </header>
+
+    <div class="progress-dots" id="progress-dots" aria-hidden="true">
+      <span class="dot active" data-step="0"></span>
+      <span class="dot" data-step="1"></span>
+      <span class="dot" data-step="2"></span>
+    </div>
+
+    <!-- SCREEN 1 — mood -->
+    <section id="screen-mood" class="screen active">
+      <p class="step-label">how's today feeling so far?</p>
+
+      <div class="mood-row">
+
+        <div class="pic-card has-image" data-mood="good" id="card-good">
+          <label class="pic-button" for="upload-good">
+            <input type="file" id="upload-good" accept="image/*" hidden />
+            <span class="pic-inner" id="inner-good">
+              <span class="placeholder-icon">🌞</span>
+              <span class="placeholder-text">tap to upload a<br />"good day" picture</span>
+            </span>
+            <span class="edit-chip" title="change picture">✎</span>
+          </label>
+          <button class="choose-btn" data-mood="good">this is a good day</button>
+        </div>
+
+        <div class="pic-card has-image" data-mood="bad" id="card-bad">
+          <label class="pic-button" for="upload-bad">
+            <input type="file" id="upload-bad" accept="image/*" hidden />
+            <span class="pic-inner" id="inner-bad">
+              <span class="placeholder-icon">🌧️</span>
+              <span class="placeholder-text">tap to upload a<br />"rough day" picture</span>
+            </span>
+            <span class="edit-chip" title="change picture">✎</span>
+          </label>
+          <button class="choose-btn" data-mood="bad">today's a little heavy</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCREEN 2 — time -->
+    <section id="screen-time" class="screen">
+      <p class="step-label">how much sunday do you actually have?</p>
+
+      <div class="time-row">
+        <button class="time-btn" data-time="whole">
+          <span class="time-emoji">🌅</span>
+          <span>the whole day is mine</span>
+        </button>
+        <button class="time-btn" data-time="limited">
+          <span class="time-emoji">⏳</span>
+          <span>just a little pocket of time</span>
+        </button>
+      </div>
+
+      <button class="back-link" id="back-to-mood">← back</button>
+    </section>
+
+    <!-- SCREEN 3 — result -->
+    <section id="screen-result" class="screen">
+      <p class="step-label" id="result-eyebrow"></p>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-note"><em id="result-note"></em></p>
+
+      <ul class="task-list" id="task-list"></ul>
+
+      <button class="restart-btn" id="restart">start over ↺</button>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
